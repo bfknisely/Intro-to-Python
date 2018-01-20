@@ -34,3 +34,30 @@ primes = [2, 3, 5, 7, 11, 13, 17]
 4 in primes
 4 not in primes
 
+a = input('Enter 2 or any other number: ')  # Ask user for some number
+if a == 2:
+    print('a is equal to 2')
+
+if a == 2:
+    print('a is equal to 2')
+else:
+    print('a is not equal to 2')
+
+# While loops
+
+a = 1
+while a != 8:
+    print(a)
+    a = a + 1
+    print('...')
+print('Congratulations.')
+
+a = 2
+while a < 7:
+    a += 1
+    print(a)
+
+a = 1
+while a <= 32:
+    a *= 2
+    print(a)
