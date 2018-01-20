@@ -34,12 +34,22 @@ primes = [2, 3, 5, 7, 11, 13, 17]
 4 in primes
 4 not in primes
 
-a = input('Enter 2 or any other number: ')  # Ask user for some number
+# If statements
+a = eval(input('Enter 2 or any other number: '))  # Ask user for some number
 if a == 2:
     print('a is equal to 2')
 
+# If, else conditions
 if a == 2:
     print('a is equal to 2')
+else:
+    print('a is not equal to 2')
+
+# If, else-if, else conditions
+if a == 2:
+    print('a is equal to 2')
+elif a == 3:
+    print('a is equal to 3')
 else:
     print('a is not equal to 2')
 
@@ -54,10 +64,10 @@ print('Congratulations.')
 
 a = 2
 while a < 7:
-    a += 1
+    a += 1  # shorthand form of "a = a + 1"
     print(a)
 
 a = 1
 while a <= 32:
-    a *= 2
+    a *= 2  # shorthand for "a = 2*a"
     print(a)
