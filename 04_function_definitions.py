@@ -12,7 +12,7 @@ def main():
     # do something within function
     # According to Pep8 guidelines, functions should have two returns before
     # and after the definition, as illustrated here
-    print('Hello world')  # this is a comment
+    print('Hello world')
 
 
 main()  # run main function
@@ -39,7 +39,8 @@ def squareRoot(x):  # function to return positive and negative sqrts
     import math  # can import libraries within a function
     root1 = math.sqrt(x)  # take square root
     root2 = -math.sqrt(x)  # take -1*square root
-    return root1, root2  # return both values
+    return root1, root2  # returns two values
+    # When the function reaches the return line, it returns values and stops
 
 
 a, b = squareRoot(9)  # run function and store values as variables
@@ -52,8 +53,8 @@ def makeZeroList(x):  # little function to demonstrate making a list of 0s
     return [0]*x
 
 
-makeZeroArray(5)  # test out the function with 5 as an input
-a = makeZeroArray(5)  # assign value to variable a
+makeZeroList(5)  # test out the function with 5 as an input
+a = makeZeroList(5)  # assign value to variable a
 a
 
 ################################################
@@ -63,6 +64,7 @@ a
 # super useful. Pay more attention to the structure of this code
 
 # Pretend this code is contained within its own file called "important.py"
+
 
 """
 Docstring goes here
@@ -75,7 +77,7 @@ and to illustrate the "__name__" construct
 The functions below can each be imported into another Python code and called.
 e.g.
 import important
-important.main()  # Executes main function by calling it
+important.functionOne()  # Executes main function by calling it
 
 However, the section at the bottom will execute only when this code is run
 directly. This allows the script to be used for this particular purpose, while
@@ -104,10 +106,10 @@ def main():
     myNum = startFunction(5)
     myList = middleFunction(myNum)
     tot, maxVal = lastFunction(myList)
-    print('The input value was {}'.format(myNum))
-    print('The sum of values up to {} is {}'.format(myNum, tot))
+    print('The input value was {}'.format(maxVal))
+    print('The sum of values up to {} is {}'.format(maxVal, tot))
 
 
 if __name__ == "__main__":
     # This code only runs when "important.py" is run directly
-    main():
+    main()
