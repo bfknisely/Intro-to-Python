@@ -6,10 +6,10 @@ Created on Fri Jan 19 19:13:04 2018
 The purpose of this code is to learn matrices and numpy n-dimensional arrays
 """
 
-# Numpy matrix is strictly 2-dimensional, while numpy arrays can be any 
+# Numpy matrix is strictly 2-dimensional, while numpy arrays can be any
 # dimension
 
-# Let's do matrices first
+# Start with matrices
 
 import numpy as np  # imports numpy module and names it "np"
 
@@ -146,6 +146,8 @@ c**2  # take each element in array to power of two
 print(z)  # recall what z looks like
 q = z.nonzero()  # get nonzero elements of array
 # results are paired row-column coordinates
+# returns an empty array if no elements are nonzero
 z[q]  # indexes nonzero elements in array
+
 
 np.linalg.det(a)  # get determinant of square matrix
