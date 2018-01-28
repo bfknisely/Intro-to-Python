@@ -149,5 +149,4 @@ q = z.nonzero()  # get nonzero elements of array
 # returns an empty array if no elements are nonzero
 z[q]  # indexes nonzero elements in array
 
-
 np.linalg.det(a)  # get determinant of square matrix
