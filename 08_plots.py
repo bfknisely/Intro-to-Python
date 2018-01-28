@@ -16,6 +16,8 @@ yData = [20, 59, 118, 197, 299, 420]  # y data
 
 # If you are using an IDE with the IPython console, figures can be displayed in
 # line in the console, as shown here:
+# (Note, you must run all lines together in order to make one plot with all
+# of the specified elements)
 
 fig, ax = plt.subplots()  # define figure object and axis object
 plt.plot(xData, yData)  # plots the x-y data on the current figure
@@ -53,9 +55,6 @@ plt.plot(xData, yData)  # plots the x-y data on the current figure
 plt.plot(xData, yData, 'ko')  # plots the x-y data with black (k) circles (o)
 
 # Good plots need axis labels. Axis labels are added with xlabel and ylabel
-
-# Also note, you must run all lines together in order to make one plot with all
-# of the specified elements
 
 plt.plot(xData, yData, 'ko')  # plots the x-y data with black (k) circles (o)
 plt.xlabel("Velocity [mph]")  # add x-label to plot
