@@ -50,12 +50,77 @@ plt.plot(xData, yData)  # plots the x-y data on the current figure
 # ^ = triangle
 # For more markers go to: https://matplotlib.org/api/markers_api.html
 
-# The color and line format can be specified in either order; e.g. 'ko' or 'ok'
+# Line styles
+# - = solid line
+# -. = dash-dot line
+# -- = dashed line
+# : = dotted line
+# For more lines (and general options for 2D lines) go to:
+# https://matplotlib.org/api/_as_gen/matplotlib.lines.Line2D.html
 
-plt.plot(xData, yData, 'ko')  # plots the x-y data with black (k) circles (o)
+# The color, marker, and line format can be specified in any order
+# e.g. 'ko-' or 'o-k'
+
+plt.plot(xData, yData, 'ko')  # plots with black (k) circles (o) and no line
 
 # Good plots need axis labels. Axis labels are added with xlabel and ylabel
 
 plt.plot(xData, yData, 'ko')  # plots the x-y data with black (k) circles (o)
 plt.xlabel("Velocity [mph]")  # add x-label to plot
 plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+
+# Multiple data sets can be plotted together
+# We need another data set
+xData2 = [11.25, 22.5, 33.75, 45.0, 60, 72]
+yData2 = [30., 60, 100., 150, 270, 410]
+
+# Elements can be plotted together either on the same line of code:
+# The first data set is in black circles with no line
+# The second data set is plotted with blue triangles and a dotted line
+plt.plot(xData, yData, 'ko', xData2, yData2, 'b:^')
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+
+# Or on separate lines of code:
+plt.plot(xData, yData, 'rx')
+plt.plot(xData2, yData2, 'bs')
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+
+# You can add a legend with the legend function; input is an array of strings
+plt.plot(xData, yData, 'md')
+plt.plot(xData2, yData2, 'b.')
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+plt.legend(['Test 1', 'Test 2'])
+
+# More on legends here: https://matplotlib.org/users/legend_guide.html
+
+# Set the axis limits using xlim(xmin, xmax) and ylim(ymin, ymax)
+plt.plot(xData, yData, 'ko')
+plt.plot(xData2, yData2, 'bs')
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+plt.legend(['Test 1', 'Test 2'])
+plt.xlim(0, 80)
+plt.ylim(0, 500)
+
+# Plot on log-log axes using the "loglog" function in place of "plot"
+plt.loglog(xData, yData, 'ko')
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+
+# Or plot with a logarithmic x-axis and linear y axis with "semilogx"
+plt.semilogx(xData, yData, 'ko')
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+
+# Or vise versa with "semilogy"
+plt.semilogy(xData, yData, 'ko')
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+
+# Turn on the grid with the grid function
+plt.plot(xData, yData, 'ko')
+
+plt.grid(True)
