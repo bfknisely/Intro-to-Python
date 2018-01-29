@@ -1,9 +1,12 @@
 """
-Created on Fri Jan 19 19:13:04 2018
+Created on Jan 29, 2018
 
 @author: Brian
 
-The purpose of this code is to learn plotting using MatPlotLib and Numpy
+The purpose of this code is to learn basic plotting using MatPlotLib and Numpy.
+
+This code also addresses related topics, like making 1D Numpy arrays, saving
+plots as image files, deleting files, and making a polynomial regression.
 """
 
 import matplotlib.pyplot as plt  # imports MatPlotLib module
@@ -56,14 +59,30 @@ plt.plot(xData, yData)  # plots the x-y data on the current figure
 fname = 'MyPlotImage.png'  # choose filename & extension (e.g. png, jpg, pdf)
 plt.savefig(fname)  # save current figure as filename
 
-# The file will save in the working directory if only a filename is specified
+# The file will save in the working directory if the path is not specified
 # Check the current working directory with getcwd
 os.getcwd()  # check current working directory
-os.startfile(fname)  # open file with the OS's default program
 
-# Save as higher-quality image by increasing the dpi
-plt.plot(xData, yData)  # plots the x-y data on the current figure
-plt.savefig(fname, dpi=320)
+os.startfile(fname)  # open file with the OS's default program
+os.remove(fname)  # delete file permanently (Does NOT go to Recycle Bin!)
+#                   It's gone forever.
+
+# Save as higher-quality image by increasing the dpi (default dpi = 80)
+
+plt.plot(xData, yData)  # plot the x-y data on the current figure
+myDir = 'C:\\Users\\Brian\\Desktop\\'  # example folder to save figure
+filepath = myDir + fname  # combine directory and file name into one string
+print(filepath)
+plt.savefig(filepath, dpi=320)  # Save file
+plt.close()  # Once the file has been saved, you can close the figure so it
+#              does not appear on the console
+
+# open file with the OS's default program
+os.startfile(filepath)
+
+# delete file permanently (Does NOT go to Recycle Bin!)
+os.remove(filepath)
+
 
 # Now we have made a basic plot. Notice the default format is a thin,
 # continuous, blue line.
@@ -126,6 +145,16 @@ plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
 
 # Or on separate lines of code:
 plt.plot(xData, yData, 'rx')  # red X markers
+plt.plot(xData2, yData2, 'bs')  # blue square markers
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+
+# You can make multiple plots by using the plt.figure() function
+plt.figure()  # make new figure
+plt.plot(xData, yData, 'rx')  # red X markers
+plt.xlabel("Velocity [mph]")  # add x-label to plot
+plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
+plt.figure()  # make new figure
 plt.plot(xData2, yData2, 'bs')  # blue square markers
 plt.xlabel("Velocity [mph]")  # add x-label to plot
 plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
