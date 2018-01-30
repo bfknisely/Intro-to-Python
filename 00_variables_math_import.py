@@ -9,6 +9,9 @@ them, doing basic math, and importing modules
 This part at the top is called the docstring, where you can put relevant
 details about the code like when it was made, who made it, and what the purpose
 of the code is.
+
+The recommended way to go through this file is on a line-by-line basis. Using
+an IDE like Spyder, you can run a single line at a time (with F9 in Spyder).
 """
 
 # Assigning variables
