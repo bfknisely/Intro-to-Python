@@ -2,3 +2,5 @@
 test.docx
 Practice.docx
 *.ini
+*.gitattributes
+*.docx
