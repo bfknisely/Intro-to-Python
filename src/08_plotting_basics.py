@@ -73,7 +73,7 @@ plt.plot(xData, yData)  # plot the x-y data on the current figure
 myDir = 'C:\\Users\\Brian\\Desktop\\'  # example folder to save figure
 filepath = myDir + fname  # combine directory and file name into one string
 print(filepath)
-# Specify the DPI (dots per inch of a plot)
+# Specify the DPI (dots per inch of a plot) to set size of plot
 plt.savefig(filepath, dpi=320)  # Save file with high DPI
 plt.close()  # Once the file has been saved, you can close the figure so it
 #              does not appear on the console
@@ -83,7 +83,6 @@ os.startfile(filepath)
 
 # delete file permanently (Does NOT go to Recycle Bin!)
 os.remove(filepath)
-
 
 # Now we have made a basic plot. Notice the default format is a thin,
 # continuous, blue line.
@@ -197,11 +196,11 @@ plt.ylabel("Stopping Distance [ft]")  # add y-label to plot
 plt.plot(xData, yData, 'ko')
 plt.grid(True)  # Turns on major gridlines
 
-# Simple polynomial regression for (xData, yData)
+# Simple OLS polynomial regression for (xData, yData)
 
 degree = 2  # Choose order of polynomial
 # create fit object with inputs (x, y, degree)
-fit = np.polyfit(xData, yData, degree)
+fit = np.polyfit(xData, yData, degree)  # y = b0 + b1*x + b2*x^2
 yFit = np.polyval(fit, xData)  # Calculate y_fit for each x data point
 R = np.corrcoef(xData, yData)[0, 1]  # Get correlation coefficient (R)
 print(R)  # Print correlation coefficient
