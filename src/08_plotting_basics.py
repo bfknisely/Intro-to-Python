@@ -57,15 +57,15 @@ plt.plot(xData, yData)  # plots the x-y data on the current figure
 # Save your plot with the plt.savefig function
 plt.plot(xData, yData)  # plots the x-y data on the current figure
 fname = 'MyPlotImage.png'  # choose filename & extension (e.g. png, jpg, pdf)
-plt.savefig(fname)  # save current figure as filename
+plt.savefig(fname)  # save current figure as filename to working directory
 
 # The file will save in the working directory if the path is not specified
 # Check the current working directory with getcwd
 os.getcwd()  # check current working directory
-
+# Run/open file outside of Spyder/Python
 os.startfile(fname)  # open file with the OS's default program
 os.remove(fname)  # delete file permanently (Does NOT go to Recycle Bin!)
-#                   It's gone forever.
+#                   It's gone forever. Just like with "rm" in bash shell
 
 # Save as higher-quality image by increasing the dpi (default dpi = 80)
 
@@ -73,7 +73,8 @@ plt.plot(xData, yData)  # plot the x-y data on the current figure
 myDir = 'C:\\Users\\Brian\\Desktop\\'  # example folder to save figure
 filepath = myDir + fname  # combine directory and file name into one string
 print(filepath)
-plt.savefig(filepath, dpi=320)  # Save file
+# Specify the DPI (dots per inch of a plot)
+plt.savefig(filepath, dpi=320)  # Save file with high DPI
 plt.close()  # Once the file has been saved, you can close the figure so it
 #              does not appear on the console
 
