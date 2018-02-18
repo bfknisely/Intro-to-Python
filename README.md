@@ -6,4 +6,4 @@ Before downloaded any scripts, I'd recommend installing both
 
 2) Anaconda: https://www.anaconda.com/download/
 	
-	Anaconda is a scientific Python distribution that includes Spyder, a popular integrated development environment (IDE). Spyder features a MATLAB/R-like interface which allows for rapid development and analysis. Other options for IDEs include PyCharm and Rodeo (still in Beta). 
+	Anaconda is a scientific Python distribution that includes Spyder, a popular integrated development environment (IDE). Spyder features a MATLAB/R-like interface which allows for rapid development and analysis. Other options for IDEs include (but are not limited to) PyCharm, Jupyter, Atom, and Rodeo (still in Beta). 
